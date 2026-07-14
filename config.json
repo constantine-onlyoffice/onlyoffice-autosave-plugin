@@ -1,0 +1,80 @@
+{
+  "name": "Autosave",
+  "nameLocale": {
+    "ru": "Автосохранение",
+    "de": "Automatische Speicherung",
+    "es": "Guardado automático",
+    "fr": "Enregistrement automatique",
+    "it": "Salvataggio automatico",
+    "ja": "自動保存",
+    "zh": "自动保存"
+  },
+  "guid": "asc.{6e8d59db-4210-4504-9aac-d9ce4af043a9}",
+  "version": "1.0.0",
+  "variations": [
+    {
+      "description": "Enables simple autosave.",
+      "descriptionLocale": {
+        "ru": "Включает простое автосохранение.",
+        "fr": "Active la sauvegarde automatique simple.",
+        "it": "Attiva il salvataggio automatico semplice.",
+        "ja": "簡単な自動保存を有効にします。",
+        "es": "Activa el guardado automático sencillo.",
+        "de": "Aktiviert die einfache automatische Speicherung.",
+        "zh": "启用简易自动保存功能。"
+      },
+      "url": "index.html",
+
+      "icons": ["resources/light/icon.png", "resources/light/icon@2x.png"],
+      "icons2": [
+        {
+          "style": "light",
+
+          "100%": {
+            "normal": "resources/light/icon.png"
+          }
+        },
+        {
+          "style": "dark",
+
+          "100%": {
+            "normal": "resources/dark/icon.png"
+          }
+        }
+      ],
+      "type": "background",
+      "isViewer": true,
+      "EditorsSupport": ["word", "cell", "slide", "pdf"],
+      "initDataType": "text",
+      "isUpdateOleOnResize": false,
+      "buttons": []
+    },
+    {
+      "description": "Settings",
+      "descriptionLocale": {
+        "ru": "Настройки",
+        "de": "Einstellungen",
+        "es": "Configuración",
+        "fr": "Paramètres",
+        "it": "Impostazioni",
+        "ja": "設定",
+        "zh": "设置"
+      },
+      "url": "settings.html",
+      "isViewer": true,
+      "EditorsSupport": ["word", "cell", "slide", "pdf"],
+      "isVisual": true,
+      "isModal": true,
+      "isInsideMode": false,
+      "initDataType": "none",
+      "isUpdateOleOnResize": false,
+      "buttons": [
+        {
+          "text": "OK",
+          "primary": true
+        }
+      ],
+      "size": [300, 85]
+    }
+  ]
+}
