@@ -1,7 +1,7 @@
 ## Overview
 
-This plugins adds simple autosave functionality to document, spreadsheet, presentation and PDF editros.
-In the settings you can set your preferred autosave interval in munites (minumim 1 minute).
+This plugin adds simple autosave functionality to document, spreadsheet, presentation and PDF editors.
+In the settings you can set your preferred autosave interval in minutes (minimum 1 minute).
 
 ### Installation:
 
@@ -14,7 +14,7 @@ To change the interval, navigate to *Plugins* tab > *Background plugins* > *Auto
 ### Note
 
 * Using low intervals can interrupt the workflow, recommended to have at least 5 minutes between saves.
-* For newly created documents, saving dialog will appear accodring to the interval.
+* For newly created documents, saving dialog will appear according to the interval.
 
 ### Known issues
 
