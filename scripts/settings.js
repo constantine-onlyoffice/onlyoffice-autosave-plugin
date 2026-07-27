@@ -23,14 +23,13 @@
   }
 
   window.Asc.plugin.onTranslate = function () {
-    let elements = document.getElementsByClassName("i18n");
-    for (let i = 0; i < elements.length; i++) {
-      let el = elements[i];
-      if (el.attributes["placeholder"])
-        el.attributes["placeholder"].value = getMessage(
-          el.attributes["placeholder"].value,
-        );
-      if (el.innerText) el.innerText = getMessage(el.innerText);
+    let error = document.getElementById("t-error-msg");
+    if (error) {
+      error.innerHTML = window.Asc.plugin.tr("Enter whole positive number");
+    }
+    let interval_label = document.getElementById("interval_label");
+    if (interval_label) {
+      interval_label.innerHTML = window.Asc.plugin.tr("Set interval (in minutes)");
     }
   };
 

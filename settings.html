@@ -1,118 +1,131 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Autosave settings</title>
+    <script src="vendor/jquery/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="./../v1/plugins.js"></script>
+    <script type="text/javascript" src="./../v1/plugins-ui.js"></script>
+    <link rel="stylesheet" href="./../v1/plugins.css" />
+    <script src="scripts/settings.js"></script>
+  </head>
+  <style>
+    html,
+    body {
+      height: 100% !important;
+    }
 
-<head>
-	<meta charset="UTF-8">
-	<title>Autosave settings</title>
-	<script src="vendor/jquery/jquery-3.7.1.min.js"></script>
-	<script type="text/javascript" src="./../v1/plugins.js"></script>
-	<script type="text/javascript" src="./../v1/plugins-ui.js"></script>
-	<link rel="stylesheet" href="./../v1/plugins.css">
-	<script src="scripts/settings.js"></script>
-</head>
-<style>
-	html,
-	body {
-		height: 100% !important;
-	}
+    input {
+      width: -webkit-fill-available;
+      height: 19px;
+      padding-left: 10px;
+    }
 
-	input {
-		width: -webkit-fill-available;
-		height: 19px;
-		padding-left: 10px;
-	}
+    :root {
+      --shake-distance: 6px;
+      --shake-overshoot: 4px;
+      --shake-dur-a: 80ms;
+      --shake-dur-b: 60ms;
+      --shake-ease: cubic-bezier(0.22, 1, 0.36, 1);
+      --error-border: #e23014;
+      --error-text: #d62b11;
+      --revert-hold: 3000ms;
+      --revert-dur: 280ms;
+    }
 
-	:root {
-		--shake-distance: 6px;
-		--shake-overshoot: 4px;
-		--shake-dur-a: 80ms;
-		--shake-dur-b: 60ms;
-		--shake-ease: cubic-bezier(0.22, 1, 0.36, 1);
-		--error-border: #e23014;
-		--error-text: #d62b11;
-		--revert-hold: 3000ms;
-		--revert-dur: 280ms;
-	}
+    .t-input {
+      transition: border-color 150ms ease-out;
+      will-change: transform;
+      border-radius: 5px;
+      border: solid 1px;
+      outline: none;
+    }
 
-	.t-input {
-		transition: border-color 150ms ease-out;
-		will-change: transform;
-		border-radius: 5px;
-		border: solid 1px;
-		outline: none;
-	}
+    .t-input.is-error {
+      border-color: var(--error-border);
+      transition: border-color var(--revert-dur, 280ms) ease-out;
+    }
 
-	.t-input.is-error {
-		border-color: var(--error-border);
-		transition: border-color var(--revert-dur, 280ms) ease-out;
-	}
+    #t-error-msg {
+      opacity: 0;
+      visibility: hidden;
+      transition:
+        opacity var(--revert-dur, 280ms) ease-out,
+        visibility 0s linear var(--revert-dur, 280ms);
+    }
 
-	.t-error-msg {
-		opacity: 0;
-		visibility: hidden;
-		transition:
-			opacity var(--revert-dur, 280ms) ease-out,
-			visibility 0s linear var(--revert-dur, 280ms);
-	}
+    .t-input-wrap.is-error #t-error-msg {
+      opacity: 1;
+      visibility: visible;
+      transition:
+        opacity var(--revert-dur, 280ms) ease-out,
+        visibility 0s linear 0s;
+    }
 
-	.t-input-wrap.is-error .t-error-msg {
-		opacity: 1;
-		visibility: visible;
-		transition:
-			opacity var(--revert-dur, 280ms) ease-out,
-			visibility 0s linear 0s;
-	}
+    .t-input.is-shaking {
+      animation: t-input-shake
+        calc(var(--shake-dur-a) * 2 + var(--shake-dur-b) * 2) linear;
+    }
 
-	.t-input.is-shaking {
-		animation: t-input-shake calc(var(--shake-dur-a) * 2 + var(--shake-dur-b) * 2) linear;
-	}
+    @keyframes t-input-shake {
+      0% {
+        transform: translateX(0);
+        animation-timing-function: var(--shake-ease);
+      }
 
-	@keyframes t-input-shake {
-		0% {
-			transform: translateX(0);
-			animation-timing-function: var(--shake-ease);
-		}
+      28.57% {
+        transform: translateX(var(--shake-distance));
+        animation-timing-function: var(--shake-ease);
+      }
 
-		28.57% {
-			transform: translateX(var(--shake-distance));
-			animation-timing-function: var(--shake-ease);
-		}
+      57.14% {
+        transform: translateX(calc(var(--shake-distance) * -1));
+        animation-timing-function: var(--shake-ease);
+      }
 
-		57.14% {
-			transform: translateX(calc(var(--shake-distance) * -1));
-			animation-timing-function: var(--shake-ease);
-		}
+      78.57% {
+        transform: translateX(var(--shake-overshoot));
+        animation-timing-function: var(--shake-ease);
+      }
 
-		78.57% {
-			transform: translateX(var(--shake-overshoot));
-			animation-timing-function: var(--shake-ease);
-		}
+      100% {
+        transform: translateX(0);
+      }
+    }
 
-		100% {
-			transform: translateX(0);
-		}
-	}
+    @media (prefers-reduced-motion: reduce) {
+      .t-input {
+        animation: none !important;
+        transform: none !important;
+      }
+    }
+  </style>
 
-	@media (prefers-reduced-motion: reduce) {
-		.t-input {
-			animation: none !important;
-			transform: none !important;
-		}
-	}
-</style>
-
-<body style="padding-left: 20px; padding-right: 20px">
-	<div style="margin-top: 12px; display: flex; flex-direction: column;">
-		<div
-			style="display: flex; flex-direction: row; justify-content: space-between; font-size: small; margin-bottom: 8px;">
-			<label class="i18n" for="interval">Set interval (in minutes)</label>
-			<div class="interval-value" style="display: none;">5</div>
-		</div>
-		<div class="t-input-wrap">
-			<input class="t-input" type="number" min="1" value="5" required id="interval">
-			<p class="t-error-msg">Enter whole positive number</p>
-		</div>
-	</div>
-</body>
-
+  <body style="padding-left: 20px; padding-right: 20px">
+    <div style="margin-top: 12px; display: flex; flex-direction: column">
+      <div
+        style="
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          font-size: small;
+          margin-bottom: 8px;
+        "
+      >
+        <label id="interval_label">Set interval (in minutes)</label>
+        <div class="interval-value" style="display: none">5</div>
+      </div>
+      <div class="t-input-wrap">
+        <input
+          class="t-input"
+          type="number"
+          min="1"
+          value="5"
+          required
+          id="interval"
+        />
+        <p id="t-error-msg">Enter whole positive number</p>
+      </div>
+    </div>
+  </body>
 </html>
