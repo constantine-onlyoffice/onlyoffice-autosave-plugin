@@ -10,6 +10,7 @@
     "zh": "自动保存"
   },
   "guid": "asc.{6e8d59db-4210-4504-9aac-d9ce4af043a9}",
+  "offered": "Constantine ONLYOFFICE",
   "version": "1.0.0",
   "variations": [
     {
@@ -24,21 +25,41 @@
         "zh": "启用简易自动保存功能。"
       },
       "url": "index.html",
-
-      "icons": ["resources/light/icon.png", "resources/light/icon@2x.png"],
-      "icons2": [
+      "icons": [
         {
           "style": "light",
-
           "100%": {
             "normal": "resources/light/icon.png"
+          },
+          "125%": {
+            "normal": "resources/light/icon@1.25x.png"
+          },
+          "150%": {
+            "normal": "resources/light/icon@1.5x.png"
+          },
+          "175%": {
+            "normal": "resources/light/icon@1.75x.png"
+          },
+          "200%": {
+            "normal": "resources/light/icon@2x.png"
           }
         },
         {
           "style": "dark",
-
           "100%": {
             "normal": "resources/dark/icon.png"
+          },
+          "125%": {
+            "normal": "resources/dark/icon@1.25x.png"
+          },
+          "150%": {
+            "normal": "resources/dark/icon@1.5x.png"
+          },
+          "175%": {
+            "normal": "resources/dark/icon@1.75x.png"
+          },
+          "200%": {
+            "normal": "resources/dark/icon@2x.png"
           }
         }
       ],
@@ -47,7 +68,19 @@
       "EditorsSupport": ["word", "cell", "slide", "pdf"],
       "initDataType": "text",
       "isUpdateOleOnResize": false,
-      "buttons": []
+      "buttons": [],
+      "store": {
+        "background": {
+          "light": "#444444",
+          "dark": "#444444"
+        },
+        "screenshots": [],
+        "icons": {
+          "light": "resources/store/icons",
+          "dark": "resources/store/icons"
+        },
+        "categories": ["work"]
+      }
     },
     {
       "description": "Settings",
