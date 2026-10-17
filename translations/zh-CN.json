@@ -1,4 +1,6 @@
 {
 	"Set interval (in minutes)": "设置间隔（分钟）",
-	"Enter whole positive number": "请输入一个正整数"
+	"Enter whole positive number": "请输入一个正整数",
+	"Autosave": "自动保存",
+	"Autosave settings": "自动保存设置"
 }

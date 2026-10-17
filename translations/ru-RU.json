@@ -1,4 +1,6 @@
 {
 	"Set interval (in minutes)": "Установить интервал (в минутах)",
-	"Enter whole positive number": "Введите целое положительное число"
+	"Enter whole positive number": "Введите целое положительное число",
+	"Autosave": "Автосохранение",
+	"Autosave settings": "Настройки автосохранения"
 }

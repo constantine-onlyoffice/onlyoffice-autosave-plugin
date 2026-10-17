@@ -1,4 +1,6 @@
 {
 	"Set interval (in minutes)": "間隔を設定（分）",
-	"Enter whole positive number": "正の整数を入力してください"
+	"Enter whole positive number": "正の整数を入力してください",
+	"Autosave": "自動保存",
+	"Autosave settings": "自動保存の設定"
 }
