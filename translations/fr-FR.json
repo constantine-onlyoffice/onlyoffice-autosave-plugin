@@ -1,4 +1,6 @@
 {
 	"Set interval (in minutes)": "Définir l'intervalle (en minutes)",
-	"Enter whole positive number": "Entrez un nombre entier positif"
+	"Enter whole positive number": "Entrez un nombre entier positif",
+	"Autosave": "Enregistrement automatique",
+	"Autosave settings": "Paramètres d'enregistrement automatique"
 }

@@ -1,4 +1,6 @@
 {
 	"Set interval (in minutes)": "Imposta l'intervallo (in minuti)",
-	"Enter whole positive number": "Inserisci un numero intero positivo"
+	"Enter whole positive number": "Inserisci un numero intero positivo",
+	"Autosave": "Salvataggio automatico",
+	"Autosave settings": "Impostazioni di salvataggio automatico"
 }

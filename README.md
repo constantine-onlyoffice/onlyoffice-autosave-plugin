@@ -1,7 +1,7 @@
 ## Overview
 
 This plugin adds simple autosave functionality to document, spreadsheet, presentation and PDF editors.
-In the settings you can set your preferred autosave interval in munites (minumim 1 minute).
+In the settings you can set your preferred autosave interval in minutes (minimum 1, maximum 35000 minutes).
 
 ### Installation:
 
@@ -9,7 +9,9 @@ Install the plugin according to the [official ONLYOFFICE plugin installation gui
 
 ### Configuration:
 
-To change the interval, navigate to *Plugins* tab > *Background plugins* > *Autosave* > *Settings*. 
+While the plugin is running, open the settings with the *Autosave* button in the *Plugins* tab (requires ONLYOFFICE 8.1 or later).
+While the plugin is stopped, the settings are available via *Plugins* tab > *Background plugins* > *Autosave* > *Settings*.
+A changed interval is applied immediately, no restart of the plugin is required.
 
 ### Note
 
@@ -18,6 +20,6 @@ To change the interval, navigate to *Plugins* tab > *Background plugins* > *Auto
 
 ### Known issues
 
-* To change interval the plugin must be disabled first to access **Settings** window.
+* The *Settings* entry in the *Background plugins* list does nothing while the plugin is running, because the editor does not start a second variation of a running plugin. Use the *Autosave* button in the *Plugins* tab instead.
 
 [1]: https://api.onlyoffice.com/docs/plugins/development-workflow/installing-and-testing/desktop-editors-installation/
