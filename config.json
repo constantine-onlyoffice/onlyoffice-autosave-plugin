@@ -11,7 +11,7 @@
   },
   "guid": "asc.{6e8d59db-4210-4504-9aac-d9ce4af043a9}",
   "offered": "Constantine ONLYOFFICE",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "variations": [
     {
       "description": "Enables simple autosave.",
@@ -68,6 +68,7 @@
       "EditorsSupport": ["word", "cell", "slide", "pdf"],
       "initDataType": "text",
       "isUpdateOleOnResize": false,
+      "events": ["onToolbarMenuClick"],
       "buttons": [],
       "store": {
         "background": {

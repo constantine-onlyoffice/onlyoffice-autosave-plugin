@@ -113,13 +113,14 @@
         "
       >
         <label id="interval_label">Set interval (in minutes)</label>
-        <div class="interval-value" style="display: none">5</div>
       </div>
       <div class="t-input-wrap">
         <input
           class="t-input"
           type="number"
           min="1"
+          max="35000"
+          step="1"
           value="5"
           required
           id="interval"
